@@ -163,6 +163,19 @@ is `512 × voltage` EU, and output supports up to 16 A.
 | --- | ---: | ---: | ---: |
 | `gtoa:ulv_magic_generator` | 2,048 EU | 8 V, up to 16 A | 4,096 EU |
 | `gtoa:lv_magic_generator` | 8,192 EU | 32 V, up to 16 A | 16,384 EU |
+| `gtoa:mv_magic_generator` | 32,768 EU | 128 V, up to 16 A | 65,536 EU |
+| `gtoa:hv_magic_generator` | 131,072 EU | 512 V, up to 16 A | 262,144 EU |
+| `gtoa:ev_magic_generator` | 524,288 EU | 2,048 V, up to 16 A | 1,048,576 EU |
+| `gtoa:iv_magic_generator` | 2,097,152 EU | 8,192 V, up to 16 A | 4,194,304 EU |
+| `gtoa:luv_magic_generator` | 8,388,608 EU | 32,768 V, up to 16 A | 16,777,216 EU |
+| `gtoa:zpm_magic_generator` | 33,554,432 EU | 131,072 V, up to 16 A | 67,108,864 EU |
+| `gtoa:uv_magic_generator` | 134,217,728 EU | 524,288 V, up to 16 A | 268,435,456 EU |
+| `gtoa:uhv_magic_generator` | 536,870,912 EU | 2,097,152 V, up to 16 A | 1,073,741,824 EU |
+| `gtoa:uev_magic_generator` | 2,147,483,648 EU | 8,388,608 V, up to 16 A | 4,294,967,296 EU |
+| `gtoa:uiv_magic_generator` | 8,589,934,592 EU | 33,554,432 V, up to 16 A | 17,179,869,184 EU |
+| `gtoa:uxv_magic_generator` | 34,359,738,368 EU | 134,217,728 V, up to 16 A | 68,719,476,736 EU |
+| `gtoa:opv_magic_generator` | 137,438,953,472 EU | 536,870,912 V, up to 16 A | 274,877,906,944 EU |
+| `gtoa:max_magic_generator` | 549,755,813,888 EU | 2,147,483,648 V, up to 16 A | 1,099,511,627,776 EU |
 
 Place an End Crystal immediately above the generator. Generation does not consume
 the crystal or mana. Removing the crystal stops generation while stored energy
