@@ -1,18 +1,19 @@
-# Histórico de alterações
+# Changelog
 
 ## 0.1.0-dev9 — 2026-10-02
 
-Primeira versão para GregTech Odyssey 0.6.0-dev9 (Minecraft 1.20.1 / Forge).
+Initial release for GregTech Odyssey 0.6.0-dev9 (Minecraft 1.20.1 / Forge).
 
-- Universal Factory do GTNA com textura original e receitas de bancada 1:1.
-- 32 tipos de receita originais e nove adicionais: Laminator, Loom, Laser Welder,
-  Cluster, Rolling, Dehydrator, Unpacker, Electromagnetic Separator e Alloy Smelter.
-- Modos Legacy, Shared Budget e Unlimited, threads, paralelismo, batch e aquecimento.
-- Correção da busca após fila vazia e do estado ativo após terminar a última receita.
-- Primitive Stone Furnace e kit de montagem.
-- Buses/hatches estendidos e covers de produção.
-- Entangled Miner e Entangled Oil Drill Steam–EV, com cartões de vínculo.
-- Magic Generators ULV–MAX e termostato da torre primitiva.
-- Integração de estruturas corrigida para o tipo de array exigido pelo dev9.
-- Traduções em português do Brasil e inglês.
-- Compilação e 55 testes aprovados; Universal Factory confirmada em jogo no dev9.
+- Ported GTNA Universal Factory with its original texture and matching crafting recipes.
+- Included 32 original recipe types and nine additions: Laminator, Loom, Laser Welder,
+  Cluster, Rolling, Dehydrator, Unpacker, Electromagnetic Separator, and Alloy Smelter.
+- Added Legacy, Shared Budget, and Unlimited scaling, threads, parallel processing,
+  batch configuration, and warmup.
+- Fixed recipe search after an empty queue and active state after the final recipe ends.
+- Added Primitive Stone Furnace and its assembly kit.
+- Added extended buses/hatches and production covers.
+- Added Entangled Miner and Oil Drill Steam–EV, with linked cards.
+- Added Magic Generators ULV–MAX and the primitive tower thermostat.
+- Fixed the structure integration array type required by dev9.
+- Included English and Brazilian Portuguese in-game translations.
+- Build and 55 tests passed; Universal Factory operation confirmed in-game on dev9.

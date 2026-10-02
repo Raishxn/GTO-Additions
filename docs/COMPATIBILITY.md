@@ -1,53 +1,50 @@
-# Compatibilidade e atualização
+# Compatibility and updates
 
-A versão `0.1.0-dev9` do GTO-Additions tem como alvo **GregTech Odyssey 0.6.0-dev9**,
-Minecraft **1.20.1**, Forge **47.4.20** e Java **21 ou superior**.
+GTO-Additions `0.1.0-dev9` targets **GregTech Odyssey 0.6.0-dev9**, Minecraft
+**1.20.1**, Forge **47.4.20** (47 series), and Java **21 or later**.
 
-## Dependências
+## Dependencies
 
-GTOCore/GTOLib **26.9.5** e o fork do GTCEu **26.9.70** são obrigatórios e fixados
-nos metadados. AE2 **15.269.3**, LDLib **1.0.52.a** e DataSyncLib **26.9.4** são as
-APIs usadas da instalação dev9. O script de preparação extrai os jars internos
-GTCEu e AE2 do GTOCore e copia as demais APIs para compilação.
+GTOCore/GTOLib **26.9.5** and the GTO fork of GTCEu **26.9.70** are required and
+pinned in the addon metadata. AE2 **15.269.3**, LDLib **1.0.52.a**, and DataSyncLib
+**26.9.4** are the APIs used from the dev9 installation.
 
-O addon utiliza coremods para o registro antecipado das máquinas e integrações
-com receitas/estruturas. Atualizações dessas dependências podem alterar os pontos
-de integração. Compatibilidade com outras versões do GTO ou com GTCEu padrão
-não foi validada. Fabric e NeoForge não são alvos deste build Forge.
+The addon uses coremods for early machine registration and recipe/structure
+integration. Dependency updates can change these integration points. Other GTO
+versions and standard GTCEu have not been validated. Fabric and NeoForge are not
+targets of this Forge build. In multiplayer, use matching addons and dependencies
+on both sides.
 
-Em multiplayer, use o addon e as dependências correspondentes nos dois lados.
+## Installing an update
 
-## Atualizar o addon
+Close the game/server, back up your world, and replace the old addon jar in `mods`.
+Keep only one GTO-Additions version installed.
 
-Feche o jogo/servidor, guarde uma cópia do mundo e substitua o jar antigo na pasta
-`mods`. Não deixe duas versões do addon instaladas ao mesmo tempo.
-
-O GTO mantém caches persistentes de recursos e receitas. O instalador do projeto
-faz backup do jar anterior, substitui-o e invalida somente estes arquivos em
-`gtocore/cache/`:
+GTO maintains persistent resource and recipe caches. If an update leaves old models,
+translations, or recipes, back up and remove only these files under `gtocore/cache/`
+while the game/server is closed:
 
 - `gto-additions-0.1.0-dev9.jar.bin`
-- `resources` e `resource_exist`
+- `resources` and `resource_exist`
 - `json/recipes`
-- `tags/recipe_serializer` e `tags/recipe_type`
+- `tags/recipe_serializer` and `tags/recipe_type`
 
-Eles serão reconstruídos ao iniciar. Não remova toda a pasta `gtocore`, pois ela
-pode conter outros dados do modpack. O backup do instalador fica em
-`build/previous/install-<data-hora>/` dentro do projeto.
+These files are rebuilt on startup. Do not remove the entire `gtocore` folder,
+which may contain other modpack data.
 
-## Configuração da Universal Factory
+## Universal Factory configuration
 
-O arquivo `config/gtoa/balance/universal_factory.json` é criado no primeiro uso.
-Reinicie o jogo/servidor após editar o arquivo. A configuração do servidor controla
-a execução das máquinas. Valores padrão e modos estão no [guia de recursos](FEATURES.md).
+`config/gtoa/balance/universal_factory.json` is created when the machine is first
+used. Restart the game/server after editing it. Server configuration controls machine
+execution. Defaults and modes are described in the [feature guide](FEATURES.md).
 
-A estrutura exige saída adequada para os itens/fluidos produzidos. O Pattern
-Buffer de entrada não elimina a necessidade de saída. Ao esvaziar a fila, a máquina
-fica ociosa e continua verificando novas receitas.
+Provide suitable item/fluid outputs for the recipes being processed. An input
+Pattern Buffer does not replace an output bus. The machine returns to idle when
+its queue is empty and continues checking for new recipes.
 
-## Limites da validação
+## Validation limits
 
-55 testes automatizados aprovados e Universal Factory confirmada em jogo pelo
-mantenedor no dev9. A validação não cobre todos os recursos, combinações de hatches,
-condições especiais, persistência de lotes em andamento ou servidores dedicados.
-Ao relatar um problema, inclua versões, logs, receita e montagem da máquina.
+55 automated tests passed, and Universal Factory operation was confirmed in-game
+on dev9. Validation does not cover every feature, hatch combination, special recipe
+condition, in-flight batch reload, or dedicated server setup. Include versions,
+logs, recipe details, and the machine setup when reporting an issue.

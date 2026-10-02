@@ -1,85 +1,110 @@
 # GTO-Additions
 
-Addon para **GregTech Odyssey 0.6.0-dev9**, com máquinas, barramentos, hatches e
-covers adicionais. Mod ID: `gtoa`. Versão: **0.1.0-dev9**. Licença: **LGPL-3.0-only**.
+> [!TIP]
+> GTO-Additions extends **GregTech Odyssey 0.6.0-dev9** with machines, multiblock parts,
+> production covers, and recipes built around the GTO fork of GTCEu.
+>
+> Download the ready-to-use jar from [Releases](https://github.com/Raishxn/GTO-Additions/releases/tag/v0.1.0-dev9).
+> Use EMI in-game for recipes and machine structure previews.
 
-## Compatibilidade
+## Introduction
 
-Esta versão foi desenvolvida para a instalação original do **GTO 0.6.0-dev9**.
+GTO-Additions is developed for **Minecraft Forge 1.20.1** and the **GregTech Odyssey**
+ecosystem. It adds general-purpose processing, larger inventories, configurable
+production boosts, linked resource generation, and temperature automation.
 
-| Componente | Versão alvo |
+The current release is **0.1.0-dev9**. In-game text is available in English and
+Brazilian Portuguese.
+
+## Requirements
+
+| Requirement | Version / Scope |
 | --- | --- |
-| Minecraft | 1.20.1 |
-| Mod loader | Forge 47.4.20 ou posterior da série 47 |
-| Java | 21 ou superior para executar; JDK 21 para compilar |
-| GTOCore / GTOLib | 26.9.5 |
-| GTCEu, fork do GTO | 26.9.70 |
-| Applied Energistics 2, incluído no GTO | 15.269.3 |
-| LDLib | 1.0.52.a |
-| DataSyncLib | 26.9.4 |
+| GregTech Odyssey | **0.6.0-dev9** |
+| Minecraft | **1.20.1** |
+| Forge | **47.4.20 or later in the 47 series** |
+| Java | **21 or later** |
+| GTOCore / GTOLib | **26.9.5** |
+| GTCEu, GTO fork | **26.9.70** |
+| Applied Energistics 2 | **15.269.3**, included in the target modpack |
+| LDLib | **1.0.52.a**, included in the target modpack |
+| DataSyncLib | **26.9.4**, included in the target modpack |
 
-GTOCore e GTCEu têm versões fixadas nos metadados do addon. Outras versões do GTO,
-GTCEu padrão, Fabric e NeoForge não têm suporte confirmado. As integrações usam
-APIs e pontos de registro específicos do dev9; mudar o modpack exige revisar o port.
-Instale a mesma versão do addon no **cliente e no servidor**.
+GTOCore and GTCEu versions are pinned in the addon metadata. Other GTO versions,
+standard GTCEu, Fabric, and NeoForge have not been validated. Install the same addon
+version on **both the client and server**.
 
-## Recursos
+## Install
 
-- **Universal Factory:** port do GTNA, com textura e receitas originais, 41 tipos
-  de receita, threads, paralelismo e aquecimento. Modos Legacy, Shared Budget e Unlimited.
-- **Primitive Stone Furnace:** multiblock de pedra com processamento sem EU ou combustível.
-- **Buses e hatches estendidos:** mais slots/capacidade, com produção configurável nas saídas.
-- **Covers de produção:** multiplicam saídas, reduzem duração e consumo de energia.
-- **Entangled Miner e Oil Drill:** singleblocks Steam–EV com cartões de depósito/campo.
-- **Magic Generators ULV–MAX:** geração baseada em um End Crystal acima da máquina.
-- **Termostato da Primitive Distillation Tower:** controle automático de temperatura.
+1. Use a **GregTech Odyssey 0.6.0-dev9** instance and close the game/server.
+2. Download `gto-additions-0.1.0-dev9.jar` from [Releases](https://github.com/Raishxn/GTO-Additions/releases/tag/v0.1.0-dev9).
+3. Add the jar to the instance's `mods` folder and remove any older GTO-Additions jar.
+4. Start the game and use EMI for recipes and structure previews.
 
-Consulte [recursos, estruturas, receitas e configurações](docs/FEATURES.md).
-Textos da interface disponíveis em português do Brasil e inglês.
+Required dependencies come with the target modpack. If an update leaves old models,
+translations, or recipes, follow the [compatibility and update guide](docs/COMPATIBILITY.md).
 
-## Instalação
+## Features
 
-1. Use uma instância do **GregTech Odyssey 0.6.0-dev9** e feche o jogo/servidor.
-2. Baixe o jar do addon em [Releases](https://github.com/Raishxn/GTO-Additions/releases).
-3. Coloque `gto-additions-0.1.0-dev9.jar` na pasta `mods` e remova versões anteriores do addon.
-4. Inicie o jogo. As dependências vêm da instalação do modpack.
+### Multiblock Machines
 
-Para instalar uma compilação local com backup e atualização dos caches:
+| Machine | Recipe / System | Usage |
+| --- | --- | --- |
+| Universal Factory | 41 recipe types | Processes different recipes concurrently with threads, parallelism, batch settings, and warmup; includes Legacy, Shared Budget, and Unlimited scaling modes |
+| Primitive Stone Furnace | Furnace recipes, including GTO-converted vanilla recipes | Processes distinct recipes in one server tick without EU or fuel |
 
-```sh
-python3 scripts/install_dev9.py "/caminho/da/instancia/minecraft"
-```
+Universal Factory preserves GTNA's original casing texture and crafting recipes.
+Its 32 original types are extended with Laminator, Loom, Laser Welder, Cluster,
+Rolling, Dehydrator, Unpacker, Electromagnetic Separator, and Alloy Smelter.
 
-Se uma atualização conservar modelos, traduções ou receitas antigos, consulte o
-[guia de compatibilidade e atualização](docs/COMPATIBILITY.md).
+### Singleblock Machines
 
-## Compilar a partir do código
+| Machine | Tiers | Usage |
+| --- | --- | --- |
+| Entangled Miner | Steam–EV | Produces raw ores from a linked deposit without depletion or remote chunk loading |
+| Entangled Oil Drill | Steam–EV | Produces the linked bedrock fluid field's original yield without depletion |
+| Magic Generator | ULV–MAX | Generates energy while an End Crystal is placed immediately above the machine |
 
-Use **JDK 21**, Python 3 e uma instalação original do dev9 para preparar as APIs:
+### Multiblock Machine Parts
 
-```sh
-python3 scripts/prepare_dev9.py "/caminho/da/instancia/minecraft"
-./gradlew build
-```
+| Part | Usage |
+| --- | --- |
+| Extended Item Input / Output Buses | Eight times the standard slot count across ULV–MAX; output variants support configurable production boosts |
+| Extended Fluid Input / Output Hatches | Eight times the standard capacity per tank, with 1/4/9-tank variants; output variants support configurable boosts |
+| Extended Steam Outputs | 32 item slots or 128,000 mB fluid capacity, with a configurable 1×–8× output boost |
+| Distillation Thermostat Hatch | Automates cold/hot section temperatures in the Primitive Distillation Tower without fuel |
 
-No Windows, use `gradlew.bat build`. O resultado fica em
-`build/libs/gto-additions-0.1.0-dev9.jar`. A primeira compilação requer acesso à
-internet para as ferramentas de compilação. Os jars de dependências em `libs/`
-são locais, não entram no repositório nem no jar publicado.
+### Covers and Items
 
-## Estado de validação
+| Item | Usage |
+| --- | --- |
+| Production Boost Covers | Multiply singleblock recipe outputs, reduce duration to one fifth, and halve positive EU/t |
+| Entangled Vein Card | Links an ore deposit to an Entangled Miner |
+| Entangled Fluid Card | Links a bedrock fluid field to an Entangled Oil Drill |
+| Primitive Furnace Kit | Supplies the controller, stone, and extended ULV buses needed for the furnace structure |
 
-Compilação e **55 testes automatizados** aprovados. O funcionamento da Universal
-Factory foi confirmado em jogo no dev9 após corrigir a retomada de receitas e o
-estado ocioso. Outros recursos e cenários de persistência/integração ainda exigem
-validação adicional; esta é uma versão inicial para o modpack alvo.
+### Recipes and Configuration
 
-Veja o [histórico de alterações](CHANGELOG.md). Para relatar um problema, informe
-versões, receita, estrutura e anexos relevantes de `logs/latest.log` ou crash report.
+Use **EMI** to view crafting recipes. The [feature guide](docs/FEATURES.md) explains
+machine structures, rates, recipe layouts, IDs, upgrades, and configuration.
 
-## Créditos e licença
+Universal Factory configuration is stored in
+`config/gtoa/balance/universal_factory.json`, created on first use. Restart the
+game/server after changing it. Thread/batch and output-boost settings are also
+available through the relevant machine interfaces.
 
-Desenvolvido por **Raishxn**. Código sob [LGPL-3.0-only](LICENSE), acompanhado do
-texto da [GPL v3](COPYING). Ports e recursos de terceiros estão documentados em
-[THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md). As dependências do modpack
-mantêm suas próprias licenças e são distribuídas pelos respectivos projetos.
+## Support
+
+Report issues with your modpack/dependency versions, recipe, machine setup, and
+relevant `logs/latest.log` or crash report. The build and **55 automated tests**
+passed, and Universal Factory operation was confirmed in-game on dev9. Full
+validation of other features, persistence, and dedicated servers is still incomplete.
+
+See the [changelog](CHANGELOG.md) for release details. Contributor instructions
+are available in the separate [development guide](docs/DEVELOPMENT.md).
+
+## Credits and License
+
+Developed by **Raishxn**. Licensed under [LGPL-3.0-only](LICENSE), accompanied by
+[GPL v3](COPYING). See [third-party notices](THIRD_PARTY_NOTICES.md) for GTNA/GTLCore
+ports and asset credits. Modpack dependencies retain their own licenses.
