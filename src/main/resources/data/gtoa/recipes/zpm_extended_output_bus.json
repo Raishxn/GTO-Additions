@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "gtceu:zpm_output_bus"
+    },
+    {
+      "item": "gtceu:zpm_output_bus"
+    }
+  ],
+  "result": {
+    "item": "gtoa:zpm_extended_output_bus"
+  }
+}

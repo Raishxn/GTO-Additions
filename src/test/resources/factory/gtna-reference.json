@@ -1,0 +1,110 @@
+{
+  "source": "GTNAMachineRecipes.java / GTNAMachines.java / assets/gtna/textures/block/casings/universal_factory_casing.png (snapshot 2026-10-02)",
+  "recipes": {
+    "universal_factory_casing": {
+      "type": "minecraft:crafting_shaped",
+      "category": "misc",
+      "pattern": [
+        "BCB",
+        "DAD",
+        "BCB"
+      ],
+      "key": {
+        "A": {
+          "item": "gtceu:solid_machine_casing"
+        },
+        "B": {
+          "item": "gtceu:double_aluminium_plate"
+        },
+        "C": {
+          "item": "gtceu:mv_electric_motor"
+        },
+        "D": {
+          "item": "gtceu:mv_electric_piston"
+        }
+      },
+      "result": {
+        "item": "gtna:universal_factory_casing",
+        "count": 2
+      },
+      "show_notification": true
+    },
+    "universal_factory": {
+      "type": "minecraft:crafting_shaped",
+      "category": "misc",
+      "pattern": [
+        "ABC",
+        "DEF",
+        "GHI"
+      ],
+      "key": {
+        "A": {
+          "item": "gtceu:mv_electric_motor"
+        },
+        "B": {
+          "item": "gtceu:mv_robot_arm"
+        },
+        "C": {
+          "item": "gtceu:mv_electric_piston"
+        },
+        "D": {
+          "item": "gtceu:mv_electric_pump"
+        },
+        "E": {
+          "item": "gtna:universal_factory_casing"
+        },
+        "F": {
+          "item": "gtceu:mv_emitter"
+        },
+        "G": {
+          "item": "gtceu:mv_conveyor_module"
+        },
+        "H": {
+          "item": "gtceu:mv_sensor"
+        },
+        "I": {
+          "item": "gtceu:mv_fluid_regulator"
+        }
+      },
+      "result": {
+        "item": "gtna:universal_factory"
+      },
+      "show_notification": true
+    }
+  },
+  "originalTypes": [
+    "BENDER_RECIPES",
+    "COMPRESSOR_RECIPES",
+    "FORGE_HAMMER_RECIPES",
+    "CUTTER_RECIPES",
+    "EXTRUDER_RECIPES",
+    "LATHE_RECIPES",
+    "WIREMILL_RECIPES",
+    "FORMING_PRESS_RECIPES",
+    "POLARIZER_RECIPES",
+    "LASER_ENGRAVER_RECIPES",
+    "FLUID_SOLIDFICATION_RECIPES",
+    "ASSEMBLER_RECIPES",
+    "ARC_FURNACE_RECIPES",
+    "CIRCUIT_ASSEMBLER_RECIPES",
+    "CANNER_RECIPES",
+    "CENTRIFUGE_RECIPES",
+    "THERMAL_CENTRIFUGE_RECIPES",
+    "ELECTROLYZER_RECIPES",
+    "SIFTER_RECIPES",
+    "MACERATOR_RECIPES",
+    "EXTRACTOR_RECIPES",
+    "CHEMICAL_RECIPES",
+    "MIXER_RECIPES",
+    "CHEMICAL_BATH_RECIPES",
+    "ORE_WASHER_RECIPES",
+    "LARGE_CHEMICAL_RECIPES",
+    "PACKER_RECIPES",
+    "DISTILLERY_RECIPES",
+    "AUTOCLAVE_RECIPES",
+    "FLUID_HEATER_RECIPES",
+    "BREWING_RECIPES",
+    "FERMENTING_RECIPES"
+  ],
+  "textureSha256": "1d0cc0cfefa92a31872b3264dc0e4dcd41e4f5af620130481b6e0ea3e7d22b09"
+}

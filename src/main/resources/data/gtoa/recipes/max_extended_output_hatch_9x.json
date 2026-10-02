@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "gtceu:max_output_hatch_9x"
+    },
+    {
+      "item": "gtceu:max_output_hatch_9x"
+    }
+  ],
+  "result": {
+    "item": "gtoa:max_extended_output_hatch_9x"
+  }
+}

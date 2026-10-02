@@ -1,0 +1,8 @@
+{
+  "parent": "gtceu:block/overlay/front_emissive",
+  "textures": {
+    "particle": "gtoa:block/overlay/machine/overlay_thermostat_hatch",
+    "overlay": "gtoa:block/overlay/machine/overlay_thermostat_hatch",
+    "overlay_emissive": "gtoa:block/overlay/machine/overlay_thermostat_hatch_emissive"
+  }
+}

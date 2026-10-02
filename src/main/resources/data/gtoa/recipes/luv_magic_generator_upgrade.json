@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "gtoa:iv_magic_generator"
+    },
+    {
+      "item": "gtceu:luv_machine_hull"
+    },
+    {
+      "item": "minecraft:redstone"
+    }
+  ],
+  "result": {
+    "item": "gtoa:luv_magic_generator"
+  }
+}

@@ -1,0 +1,13 @@
+/.gradle/
+/build/
+/libs/*.jar
+/run/
+/.idea/
+*.iml
+
+# Local agent notes and unrelated platform preview/generated third-party catalogs
+/CONTINUITY.md
+/tools/platform-preview/
+__pycache__/
+*.py[cod]
+.DS_Store

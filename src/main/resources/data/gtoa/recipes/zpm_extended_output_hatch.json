@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "gtceu:zpm_output_hatch"
+    },
+    {
+      "item": "gtceu:zpm_output_hatch"
+    }
+  ],
+  "result": {
+    "item": "gtoa:zpm_extended_output_hatch"
+  }
+}

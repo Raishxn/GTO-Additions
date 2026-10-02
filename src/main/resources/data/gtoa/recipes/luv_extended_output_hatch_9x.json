@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "gtceu:luv_output_hatch_9x"
+    },
+    {
+      "item": "gtceu:luv_output_hatch_9x"
+    }
+  ],
+  "result": {
+    "item": "gtoa:luv_extended_output_hatch_9x"
+  }
+}

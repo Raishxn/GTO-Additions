@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "gtoa:opv_magic_generator"
+    },
+    {
+      "item": "gtceu:max_machine_hull"
+    },
+    {
+      "item": "minecraft:redstone"
+    }
+  ],
+  "result": {
+    "item": "gtoa:max_magic_generator"
+  }
+}

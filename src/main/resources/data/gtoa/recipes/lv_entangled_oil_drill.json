@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "gtoa:steam_entangled_oil_drill"
+    },
+    {
+      "item": "gtceu:lv_machine_hull"
+    },
+    {
+      "item": "minecraft:redstone"
+    }
+  ],
+  "result": {
+    "item": "gtoa:lv_entangled_oil_drill",
+    "count": 1
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "gtceu:hv_input_bus"
+    },
+    {
+      "item": "gtceu:hv_input_bus"
+    }
+  ],
+  "result": {
+    "item": "gtoa:hv_extended_input_bus"
+  }
+}

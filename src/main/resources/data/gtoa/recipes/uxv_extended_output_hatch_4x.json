@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "gtceu:uxv_output_hatch_4x"
+    },
+    {
+      "item": "gtceu:uxv_output_hatch_4x"
+    }
+  ],
+  "result": {
+    "item": "gtoa:uxv_extended_output_hatch_4x"
+  }
+}

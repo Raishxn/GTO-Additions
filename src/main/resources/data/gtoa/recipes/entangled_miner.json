@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "gtoa:entangled_miner"
+    }
+  ],
+  "result": {
+    "item": "gtoa:mv_entangled_miner",
+    "count": 1
+  }
+}

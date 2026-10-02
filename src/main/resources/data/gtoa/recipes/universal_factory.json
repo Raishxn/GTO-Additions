@@ -1,0 +1,42 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "ABC",
+    "DEF",
+    "GHI"
+  ],
+  "key": {
+    "A": {
+      "item": "gtceu:mv_electric_motor"
+    },
+    "B": {
+      "item": "gtceu:mv_robot_arm"
+    },
+    "C": {
+      "item": "gtceu:mv_electric_piston"
+    },
+    "D": {
+      "item": "gtceu:mv_electric_pump"
+    },
+    "E": {
+      "item": "gtoa:universal_factory_casing"
+    },
+    "F": {
+      "item": "gtceu:mv_emitter"
+    },
+    "G": {
+      "item": "gtceu:mv_conveyor_module"
+    },
+    "H": {
+      "item": "gtceu:mv_sensor"
+    },
+    "I": {
+      "item": "gtceu:mv_fluid_regulator"
+    }
+  },
+  "result": {
+    "item": "gtoa:universal_factory"
+  },
+  "show_notification": true
+}

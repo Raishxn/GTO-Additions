@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "gtceu:uhv_output_bus"
+    },
+    {
+      "item": "gtceu:uhv_output_bus"
+    }
+  ],
+  "result": {
+    "item": "gtoa:uhv_extended_output_bus"
+  }
+}

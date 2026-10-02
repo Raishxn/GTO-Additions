@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "gtoa:item/cover/uev_production_boost_cover"
+  }
+}

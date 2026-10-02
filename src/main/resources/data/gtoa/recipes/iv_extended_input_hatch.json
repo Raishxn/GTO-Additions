@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "gtceu:iv_input_hatch"
+    },
+    {
+      "item": "gtceu:iv_input_hatch"
+    }
+  ],
+  "result": {
+    "item": "gtoa:iv_extended_input_hatch"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "BCB",
+    "DAD",
+    "BCB"
+  ],
+  "key": {
+    "A": {
+      "item": "gtceu:solid_machine_casing"
+    },
+    "B": {
+      "item": "gtceu:double_aluminium_plate"
+    },
+    "C": {
+      "item": "gtceu:mv_electric_motor"
+    },
+    "D": {
+      "item": "gtceu:mv_electric_piston"
+    }
+  },
+  "result": {
+    "item": "gtoa:universal_factory_casing",
+    "count": 2
+  },
+  "show_notification": true
+}

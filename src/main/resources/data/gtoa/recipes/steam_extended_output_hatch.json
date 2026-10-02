@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "gtocore:steam_fluid_output_hatch"
+    },
+    {
+      "item": "gtocore:steam_fluid_output_hatch"
+    }
+  ],
+  "result": {
+    "item": "gtoa:steam_extended_output_hatch"
+  }
+}
