@@ -15,6 +15,8 @@ public final class GTOABlocks {
                     .strength(5, 6).sound(SoundType.METAL).requiresCorrectToolForDrops()
                     .isValidSpawn((state, level, pos, entity) -> false))
             .lang("Universal Factory Casing")
+            // GTO installs this drop at runtime; a JSON table with the same ID breaks world loading.
+            .defaultLoot()
             .tag(BlockTags.MINEABLE_WITH_PICKAXE, com.gregtechceu.gtceu.data.recipe.CustomTags.MINEABLE_WITH_WRENCH)
             .item().build().register();
 }

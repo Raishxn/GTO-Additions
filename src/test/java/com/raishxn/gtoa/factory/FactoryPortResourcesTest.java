@@ -16,6 +16,34 @@ import static org.junit.jupiter.api.Assertions.*;
 
 /** Regression evidence against an original GTNA source snapshot, with only namespace adapted. */
 class FactoryPortResourcesTest {
+    @Test void runtimeSelfDropDoesNotCollideWithPackagedLoot() throws Exception {
+        // Check the actual pinned GTO runtime contract without loading Minecraft classes.
+        var core = new ClassNode();
+        try (var zip = new ZipFile("libs/gtocore-26.9.5.jar")) {
+            new ClassReader(zip.getInputStream(zip.getEntry("com/gtocore/data/Data.class"))).accept(core, 0);
+        }
+        boolean readsDefaultLoots = false;
+        boolean installsBlockDrop = false;
+        for (var method : core.methods) {
+            for (var instruction : method.instructions) {
+                if (instruction instanceof org.objectweb.asm.tree.FieldInsnNode field
+                        && field.owner.equals("com/gto/registrate/builders/BlockBuilder")
+                        && field.name.equals("DEFAULT_LOOTS")) readsDefaultLoots = true;
+                if (instruction instanceof org.objectweb.asm.tree.MethodInsnNode call
+                        && call.owner.equals("dev/shadowsoffire/placebo/loot/LootSystem")
+                        && call.name.equals("defaultBlockTable")) installsBlockDrop = true;
+            }
+        }
+        assertTrue(readsDefaultLoots && installsBlockDrop, "Pinned GTO must install runtime block drops");
+        var block = new ClassNode();
+        new ClassReader(Files.readAllBytes(Path.of("build/classes/java/main/com/raishxn/gtoa/GTOABlocks.class"))).accept(block, 0);
+        assertTrue(block.methods.stream().flatMap(m -> java.util.stream.StreamSupport.stream(m.instructions.spliterator(), false))
+                .anyMatch(i -> i instanceof org.objectweb.asm.tree.MethodInsnNode call && call.name.equals("defaultLoot")));
+        assertFalse(Files.exists(Path.of("src/main/resources/data/gtoa/loot_tables/blocks/universal_factory_casing.json")),
+                "A static table would collide with GTO's runtime casing drop during world loading");
+        assertNull(getClass().getClassLoader().getResource("data/gtoa/loot_tables/blocks/universal_factory_casing.json"),
+                "Processed resources must not retain the removed table");
+    }
     private String reference() throws Exception { return Files.readString(Path.of("src/test/resources/factory/gtna-reference.json")); }
     @Test void bothRecipesAreOneToOneWithGtna() throws Exception {
         var engine = new NashornScriptEngineFactory().getScriptEngine();

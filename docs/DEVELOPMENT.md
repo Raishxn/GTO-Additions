@@ -13,7 +13,7 @@ python3 scripts/prepare_dev9.py "/path/to/instance/minecraft"
 ```
 
 On Windows, use `gradlew.bat build`. The output is
-`build/libs/gto-additions-0.1.0-dev9.jar`. The first build needs internet access
+`build/libs/gto-additions-0.1.1-dev9.jar`. The first build needs internet access
 for build tools. Dependency jars in `libs/` are local compile-only APIs; they are
 excluded from version control and the addon jar.
 

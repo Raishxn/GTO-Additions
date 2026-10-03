@@ -1,6 +1,6 @@
 # Compatibility and updates
 
-GTO-Additions `0.1.0-dev9` targets **GregTech Odyssey 0.6.0-dev9**, Minecraft
+GTO-Additions `0.1.1-dev9` targets **GregTech Odyssey 0.6.0-dev9**, Minecraft
 **1.20.1**, Forge **47.4.20** (47 series), and Java **21 or later**.
 
 ## Dependencies
@@ -24,7 +24,7 @@ GTO maintains persistent resource and recipe caches. If an update leaves old mod
 translations, or recipes, back up and remove only these files under `gtocore/cache/`
 while the game/server is closed:
 
-- `gto-additions-0.1.0-dev9.jar.bin`
+- `gto-additions-*.jar.bin` (indexes for old and current addon versions)
 - `resources` and `resource_exist`
 - `json/recipes`
 - `tags/recipe_serializer` and `tags/recipe_type`
@@ -44,7 +44,7 @@ its queue is empty and continues checking for new recipes.
 
 ## Validation limits
 
-55 automated tests passed, and Universal Factory operation was confirmed in-game
-on dev9. Validation does not cover every feature, hatch combination, special recipe
+56 automated tests passed for 0.1.1-dev9. Universal Factory operation was confirmed
+in-game on dev9 with 0.1.0-dev9; the loot-table fix still needs an in-game retest. Validation does not cover every feature, hatch combination, special recipe
 condition, in-flight batch reload, or dedicated server setup. Include versions,
 logs, recipe details, and the machine setup when reporting an issue.

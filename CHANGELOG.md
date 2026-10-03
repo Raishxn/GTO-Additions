@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.1.1-dev9 — 2026-10-03
+
+- Fixed world creation/loading failing with a duplicate Universal Factory Casing loot table.
+  The casing now relies exclusively on GTO's runtime self-drop table.
+- When updating from 0.1.0-dev9, replace the old jar and clear the resource cache
+  described in [Compatibility and updates](docs/COMPATIBILITY.md).
+
 ## 0.1.0-dev9 — 2026-10-02
 
 Initial release for GregTech Odyssey 0.6.0-dev9 (Minecraft 1.20.1 / Forge).

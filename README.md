@@ -4,7 +4,7 @@
 > GTO-Additions extends **GregTech Odyssey 0.6.0-dev9** with machines, multiblock parts,
 > production covers, and recipes built around the GTO fork of GTCEu.
 >
-> Download the ready-to-use jar from [Releases](https://github.com/Raishxn/GTO-Additions/releases/tag/v0.1.0-dev9).
+> Download the ready-to-use jar from [Releases](https://github.com/Raishxn/GTO-Additions/releases/tag/v0.1.1-dev9).
 > Use EMI in-game for recipes and machine structure previews.
 
 ## Introduction
@@ -13,7 +13,7 @@ GTO-Additions is developed for **Minecraft Forge 1.20.1** and the **GregTech Ody
 ecosystem. It adds general-purpose processing, larger inventories, configurable
 production boosts, linked resource generation, and temperature automation.
 
-The current release is **0.1.0-dev9**. In-game text is available in English and
+The current release is **0.1.1-dev9**. In-game text is available in English and
 Brazilian Portuguese.
 
 ## Requirements
@@ -37,7 +37,7 @@ version on **both the client and server**.
 ## Install
 
 1. Use a **GregTech Odyssey 0.6.0-dev9** instance and close the game/server.
-2. Download `gto-additions-0.1.0-dev9.jar` from [Releases](https://github.com/Raishxn/GTO-Additions/releases/tag/v0.1.0-dev9).
+2. Download `gto-additions-0.1.1-dev9.jar` from [Releases](https://github.com/Raishxn/GTO-Additions/releases/tag/v0.1.1-dev9).
 3. Add the jar to the instance's `mods` folder and remove any older GTO-Additions jar.
 4. Start the game and use EMI for recipes and structure previews.
 
