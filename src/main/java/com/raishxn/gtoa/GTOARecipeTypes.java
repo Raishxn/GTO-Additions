@@ -18,6 +18,8 @@ public final class GTOARecipeTypes {
         GTRegistries.RECIPE_TYPES.register(id, type);
         return type;
     }
-    public static void init() {}
+    public static void init() {
+        com.raishxn.gtoa.godforge.GodforgeRecipeTypes.init();
+    }
     private GTOARecipeTypes() {}
 }

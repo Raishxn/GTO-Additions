@@ -269,6 +269,9 @@ public final class GTOAMachines {
 
     // Only the early coremod calls this method. Accessing the class initializes all definitions.
     public static void init() {
+        com.raishxn.gtoa.godforge.GodforgeBlocks.init();
+        for (var definition : com.raishxn.gtoa.godforge.GodforgeMachines.ALL) track(definition);
+        com.raishxn.gtoa.godforge.GodforgeMachines.init();
         MachineRegistrationState.complete();
         com.mojang.logging.LogUtils.getLogger().info("GTO-Additions machines registered in GTOMachines initialization");
     }

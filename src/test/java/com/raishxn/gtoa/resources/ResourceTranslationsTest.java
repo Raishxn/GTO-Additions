@@ -18,7 +18,8 @@ class ResourceTranslationsTest {
             try (var files = Files.walk(Path.of("src/main/java"))) {
                 for (var file : files.filter(p -> p.toString().endsWith(".java")).toList()) {
                     var matcher = pattern.matcher(Files.readString(file));
-                    while (matcher.find()) assertTrue(entries.hasMember(matcher.group(1)), language + ": " + matcher.group(1));
+                    // Literals ending in "." are key prefixes completed at runtime (Forge of Gods GUI and upgrades).
+                    while (matcher.find()) if (!matcher.group(1).endsWith(".")) assertTrue(entries.hasMember(matcher.group(1)), language + ": " + matcher.group(1));
                 }
             }
         }

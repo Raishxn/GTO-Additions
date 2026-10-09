@@ -39,6 +39,26 @@ class FeatureHooksTest {
         new Analyzer<>(new BasicInterpreter()).analyze(owner, method);
         return method;
     }
+    @Test void addsForgeOfGodsRecipesRightBeforeGtoFinishesItsRecipes() throws Exception {
+        var hook = (JSObject) hooks().getMember("gtoa_godforge_recipes");
+        var clazz = readClass("gtocore-26.9.5.jar", "com/gtocore/data/Data");
+        var method = clazz.methods.stream().filter(m -> m.name.equals("commonInit") && m.desc.equals("()V")).findFirst().orElseThrow();
+        ((JSObject) hook.getMember("transformer")).call(hook, method);
+        new Analyzer<>(new BasicInterpreter()).analyze("com/gtocore/data/Data", method);
+        MethodInsnNode previous = null;
+        int found = 0;
+        for (var node : method.instructions) {
+            if (!(node instanceof MethodInsnNode call)) continue;
+            if (call.name.equals("finish") && call.owner.equals("com/gtolib/api/recipe/RecipeBuilder")) {
+                assertNotNull(previous);
+                assertEquals("com/raishxn/gtoa/godforge/GodforgeRecipes", previous.owner);
+                assertEquals("init", previous.name);
+                found++;
+            }
+            previous = call;
+        }
+        assertEquals(1, found);
+    }
     @Test void registersRecipeTypesBeforeTheRegistryFreeze() throws Exception {
         var method = transform("gtoa_recipe_types_registration");
         var call = assertInstanceOf(MethodInsnNode.class, method.instructions.getFirst());

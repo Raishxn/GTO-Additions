@@ -33,3 +33,9 @@ Local dependency jars under libs/ are excluded from version control and addon pa
   remains an external reference. GTO input-unit execution and disk persistence
   are implemented by this addon. The only recipe-type additions are the nine
   listed in the feature documentation, for a total of 41. No GTOLib implementation is bundled.
+
+## Forge of Gods (GregTech Nexus Addon / GT5-Unofficial)
+
+The Forge of Gods code, structure files, shaders, GUI textures, sound and item textures under `godforge` and
+`assets/gtoa/{textures/gui/godforge,textures/render/godforge,shaders,sounds/godforge}` are ported from GregTech
+Nexus Addon (same author), itself a port of GT5-Unofficial/TecTech (LGPL-3.0) with GTOCore assets (CC BY-NC-SA 4.0).

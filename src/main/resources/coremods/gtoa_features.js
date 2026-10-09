@@ -5,6 +5,36 @@ var FieldInsnNode = Java.type('org.objectweb.asm.tree.FieldInsnNode');
 var InsnList = Java.type('org.objectweb.asm.tree.InsnList');
 function initializeCoreMod() {
     return {
+        'gtoa_godforge_oculus_final': {
+            // Optional: only applied when Oculus is installed. Draws the Forge of Gods star after the shader pack's final pass.
+            target: {type: 'METHOD', class: 'net.irisshaders.iris.pipeline.IrisRenderingPipeline', methodName: 'finalizeLevelRendering', methodDesc: '()V'},
+            transformer: function(method) {
+                var nodes = method.instructions.toArray();
+                for (var i = 0; i < nodes.length; i++) {
+                    if (nodes[i].getOpcode() === Opcodes.RETURN) {
+                        method.instructions.insertBefore(nodes[i], new MethodInsnNode(Opcodes.INVOKESTATIC, 'com/raishxn/gtoa/godforge/client/ForgeOfGodsRenderer', 'afterShaderPackFinal', '()V', false));
+                    }
+                }
+                return method;
+            }
+        },
+        'gtoa_godforge_recipes': {
+            target: {type: 'METHOD', class: 'com.gtocore.data.Data', methodName: 'commonInit', methodDesc: '()V'},
+            transformer: function(method) {
+                var nodes = method.instructions.toArray();
+                var count = 0;
+                for (var i = 0; i < nodes.length; i++) {
+                    var node = nodes[i];
+                    if (node instanceof MethodInsnNode && node.owner === 'com/gtolib/api/recipe/RecipeBuilder' && node.name === 'finish') {
+                        method.instructions.insertBefore(node, new MethodInsnNode(Opcodes.INVOKESTATIC, 'com/raishxn/gtoa/godforge/GodforgeRecipes', 'init', '()V', false));
+                        method.instructions.insert(node, new MethodInsnNode(Opcodes.INVOKESTATIC, 'com/raishxn/gtoa/godforge/GodforgeRecipes', 'verify', '()V', false));
+                        count++;
+                    }
+                }
+                if (count !== 1) throw new Error('GTO-Additions: incompatible Forge of Gods recipe hook: ' + count);
+                return method;
+            }
+        },
         'gtoa_recipe_types_registration': {
             target: {type: 'METHOD', class: 'com.gregtechceu.gtceu.common.data.GTRecipeTypes', methodName: 'init', methodDesc: '()V'},
             transformer: function(method) {

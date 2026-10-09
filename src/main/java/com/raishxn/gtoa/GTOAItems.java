@@ -58,6 +58,8 @@ public final class GTOAItems {
                         output.accept(PRIMITIVE_FURNACE_KIT.get());
                         output.accept(ENTANGLED_VEIN_CARD.get());
                         output.accept(ENTANGLED_FLUID_CARD.get());
+                        output.accept(com.raishxn.gtoa.godforge.GodforgeBlocks.HARMONIC_PHONON_TRANSMISSION_CONDUIT.asStack());
+                        for (var item : com.raishxn.gtoa.godforge.GodforgeItems.ALL) output.accept(item.get());
                     })
                     .build());
 
